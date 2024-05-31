@@ -4,15 +4,25 @@
  * Module: MMM-MatrixRainBackground
  *
  * By Andrés Vanegas <ukab72106@gmail.com>
+ * Altered by Snille
+ *
  * MIT Licensed.
  */
 
 Module.register("MMM-MatrixRainBackground", {
 	defaults: {
 		header: false,
-		fontSize: 32,
-		speed: 75,
-		rate: 99.5,
+		fontSize: 32,      // Size of the "letters".
+		speed: 75,         // Speed (lower = faster).
+		rate: 99.5,        // Mass (lower = more).
+		fillstyleR1: 200,  // Font color Red.
+		fillstyleG1: 255,  // Font color Green.
+		fillstyleB1: 10,   // Font color Blue.
+		fillstyleT1: 1,    // Font Opacity.
+		fillstyleR2: 0,    // Background color Red.
+		fillstyleG2: 0,    // Background color Green.
+		fillstyleB2: 0,    // Background color Blue.
+		fillstyleT2: 0.05, // Fade time.
 	},
 
 	requiresVersion: "2.1.0", // Required version of MagicMirror
@@ -116,9 +126,9 @@ Module.register("MMM-MatrixRainBackground", {
 	},
 
 	draw: function () {
-		this.context.fillStyle = "rgba(0, 0, 0, 0.05)";
+		this.context.fillStyle = "rgba(" + this.config.fillstyleR2 + ", " + this.config.fillstyleG2 + ", " + this.config.fillstyleB2 + ", " + this.config.fillstyleT2 + ")";
 		this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
-		this.context.fillStyle = "rgba(135, 180, 15, 0.7)";
+		this.context.fillStyle = "rgba(" + this.config.fillstyleR1 + ", " + this.config.fillstyleG1 + ", " + this.config.fillstyleB1 + ", " + this.config.fillstyleT1 + ")";
 		this.context.font = this.config.fontSize + "px arial";
 		this.context.style = "text-align:center !important";
 		for (var i = 0; i < this.drops.length; i++) {
