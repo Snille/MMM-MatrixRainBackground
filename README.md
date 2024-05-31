@@ -11,7 +11,7 @@ Example config...
 		fontSize: 16,      // Size of the "letters".
 		speed: 200,        // Speed (lower = faster).
 		rate: 99.9,        // Mass (lower = more).
-		fillstyleR1: 200,  // Font color Red .
+		fillstyleR1: 200,  // Font color Red.
 		fillstyleG1: 255,  // Font color Green.
 		fillstyleB1: 10,   // Font color Blue.
 		fillstyleT1: 1,    // Font Opacity.
